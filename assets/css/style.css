@@ -200,7 +200,7 @@ li{
 }
 @media screen and (max-width: 450px){
   .hero{
-    height: 60vh;
+    height: 50vh;
   }
   .hero-padding{
     padding: 10px 0;
