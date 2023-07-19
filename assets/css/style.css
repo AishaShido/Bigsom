@@ -102,7 +102,7 @@ li{
     left: 0;
     right: 0;
     width: 100vw;
-    background: #1d2030;
+    background: #fefefe;
     transition: .5s;
     overflow: hidden;
   }
@@ -121,6 +121,7 @@ li{
     opacity: 1.5;
   }
   .nav-bar ul li a{
+    color: #1d2030;
     margin-bottom: 12px;
   }
 }
@@ -130,30 +131,34 @@ li{
 /*  */
 
 .hero{
-  width: 100%;
-  height: 89vh;
+  min-width: 100%;
+  height: 85vh;
   /* padding: 0 2rem; */
   background-image: url("../images/one.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-origin: content-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-padding{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 90%;
-  margin: 0 auto;
+  flex-wrap: wrap;
+  white-space: pre-line;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .hero h1{
   color: #fdfdfd;
   font-size: 3.5rem;
   font-weight: bold;
   text-align: center;
-  padding-top: 8rem;
 }
 
 .hero p{
@@ -163,7 +168,6 @@ li{
   padding-top: 15px;
   padding-bottom: 15px;
   text-align: center;
-  width: 70%;
 }
 .subscribe-btn{
   padding: 15px 40px;
@@ -180,66 +184,44 @@ li{
   background: transparent;
 }
 
-@media screen and (max-width: 990px) {
-  .hero h1{
-    padding-top: 5rem;
-    font-size: 3.5rem;
-  }
-  .tasks-img{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@media screen and (max-width: 1100px){
+  .hero{
+    height: 70vh;
   }
 }
-@media screen and (max-width: 742px) {
+
+@media screen and (max-width: 767px){
+  .hero{
+    height: 65vh;
+  }
   .hero h1{
-    padding-top: 2rem;
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
-@media screen and (max-width: 635px) {
-  .hero h1{
-    padding-top: 3rem;
-    font-size: 3rem;
+@media screen and (max-width: 450px){
+  .hero{
+    height: 60vh;
   }
-  .hero p{
-    font-size: 1.3rem;
-  }
-}
-@media screen and (max-width: 481px) {
   .hero-padding{
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 10px 0;
   }
   .hero h1{
-    padding-top: 2rem;
     font-size: 2.2rem;
   }
   .hero p{
-    font-size: 20px;
+    font-size: 1rem;
   }
 }
-@media screen and (max-width: 360px) {
+
+@media screen and (max-width: 300px){
+  .hero{
+    height: 60vh;
+  }
   .hero-padding{
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 20px 0;
   }
   .hero h1{
-    padding-top: 2.4rem;
-    font-size: 1.6rem;
-    font-weight: bold;
-  }
-  .hero p{
-    font-size: 1.3rem;
-  }
-}
-@media screen and (max-width: 262px) {
-  .hero h1{
-    padding-top: 2.4rem;
-    font-size: 1.4rem;
-    font-weight: bold;
+    font-size: 1.7rem;
   }
   .hero p{
     font-size: 1rem;
@@ -256,7 +238,7 @@ li{
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 100px 32px 100px 32px ;
+  padding: 80px 32px 100px 32px ;
   overflow: hidden;
   /* background: #1d2030; */
 }
@@ -323,6 +305,7 @@ li{
 @media screen and (max-width: 931px){
   .tasks{
     padding-bottom: 40px;
+    padding-left: 2rem;
   }
   .task-title h1{
     font-size: 2.8rem;
@@ -332,7 +315,6 @@ li{
   .tasks{
     grid-template-columns: 1fr;
     padding-bottom: 40px;
-    padding-left: 1rem;
     padding-right: 1rem;
   }
   .container-task{
@@ -448,9 +430,15 @@ li{
   font-weight: 600;
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 900px){
   .grow{
     padding: 3rem 2rem;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .grow{
+    padding: 3rem 1rem;
   }
   .grow-pad h3{
     display: inline-block;
@@ -501,7 +489,7 @@ li{
 .client-container h1{
   padding-bottom: 2.5rem;
   font-size: 3rem;
-  font-weight: 600;
+  font-weight: bold;
   color: #fdfdfd;
   text-align: center;
 }
@@ -545,23 +533,64 @@ li{
 .client-4:hover img.beer-hover{
   opacity: 1;
 }
-
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 767px) {
   .client-wrapper{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
   .client-1, .client-2, .client-3, .client-4{
-    padding-bottom: 3rem;
+    margin-bottom: 30px;
   }
-  .client-wrapper img{
-    width: 50%;
-    height: 50%;
-    height: none;
-    border-radius: 100%;
-    margin-left: 2.5rem;
+  .client-1:hover img.beer,
+  .client-2:hover img.beer,
+  .client-3:hover img.beer,
+  .client-4:hover img.beer{
+    opacity: 1;
+  }
+  .client-1:hover img.beer-hover,
+  .client-2:hover img.beer-hover,
+  .client-3:hover img.beer-hover,
+  .client-4:hover img.beer-hover{
+  opacity: none;
+  display: none;
+  }
+}
+
+@media screen and (max-width: 367px) {
+  .client-container h1{
+    font-size: 2.5rem;
+  }
+  .client-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3.5rem;
+  }
+  .client-1, .client-2, .client-3, .client-4{
+    margin-bottom: 30px;
+  }
+  .client-1:hover img.beer,
+  .client-2:hover img.beer,
+  .client-3:hover img.beer,
+  .client-4:hover img.beer{
+    opacity: 1;
+  }
+  .client-1:hover img.beer-hover,
+  .client-2:hover img.beer-hover,
+  .client-3:hover img.beer-hover,
+  .client-4:hover img.beer-hover{
+  opacity: none;
+  display: none;
+  }
+}
+
+@media screen and (max-width: 279px){
+  .client-container h1{
+    font-size: 1.5rem;
+    text-align: center;
   }
 }
 
@@ -570,7 +599,7 @@ li{
 .newsletter{
   width: 100%;
   text-align: center;
-  padding: 4rem 0;
+  padding: 4rem 1.2rem;
   background: #2f2fa2;
 }
 .newsletter h2{
@@ -595,6 +624,12 @@ li{
   color: #fdfdfd;
 }
 
+@media screen and (max-width: 367px) {
+  .newsletter h2{
+    font-size: 2rem;
+  }
+}
+
 /*  */
 /* Footer */
 
@@ -612,7 +647,8 @@ footer{
 .fo-container{
   display: flex;
   flex-direction: column;
-  padding: 0 3.5rem;
+  justify-content: space-between;
+  padding: 0 2rem;
   position: relative;
   z-index: -1;
 }
@@ -732,14 +768,23 @@ footer{
   background: #0c59db;
   opacity: .3;
 }
-
+@media screen and (max-width: 1029px){
+  .arrow{
+    background: #f64c72;
+    padding: 10px 15px;
+    color: #fdfdfd;
+    font-size: 20px;
+    border-radius: 30px;
+    margin-left: 30px;
+  }
+}
 @media screen and (max-width: 1000px){
   .footer-link-col{
     padding-right: 1rem;
   }
 }
 
-@media screen and (max-width: 983px){
+@media screen and (max-width: 995px){
   .fo-container{
     display: flex;
     flex-direction: column;
@@ -749,8 +794,9 @@ footer{
     padding-right: 10px;
   }
   .arrow{
-    padding: 14px 18px;
-    font-size: 18px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 600;
     border-radius: 20px;
   }
 }
@@ -760,31 +806,26 @@ footer{
     flex-direction: column;
     padding: 0;
   }
+  .arrow{
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 20px;
+  }
   .footer-link-col{
     padding-right: 15px;
   }
-  .arrow{
-    padding: 14px 18px;
-    font-size: 18px;
-    border-radius: 20px;
-  }
-  .social-links{
-    width: fit-content;
-  }
-}
-@media screen and (max-width: 789px){
   .footer-links{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 2rem;
   }
-  .arrow{
-    padding: 14px 18px;
-    font-size: 18px;
-    border-radius: 20px;
+  .social-links{
+    width: fit-content;
   }
 }
-@media screen and (max-width: 427px){
+
+@media (max-width: 499px){
   .footer-links{
     display: grid;
     grid-template-columns: 1fr;
@@ -794,6 +835,7 @@ footer{
     padding: 14px 18px;
     font-size: 18px;
     border-radius: 20px;
+    margin-left: 0;
   }
   .rights{
     text-align: left;
@@ -835,31 +877,6 @@ footer{
   height: 80vh;  
 }
 
-/* .about-grow{
-  padding-top: 100px;
-  position: relative;
-  z-index: -1;
-}
-.about-container::after{
-  content: "";
-  position: absolute;
-  left: -30%;
-  bottom: -200%;
-  height: 500px;
-  width: 500px;
-  border-radius: 50%;
-  background: #f64c72;
-  opacity: .5;
-}
-@media (max-width: 1199px){
-  .about-container::after{
-    right: -40%;
-  }
-} */
-
-@media screen and (max-width: 800px){
-
-}
 @media screen and (max-width: 767px){
   .about-header{
     display: flex;
@@ -929,6 +946,8 @@ footer{
     height: 170vh;
   }
 }
+
+
 /*  */
 /* BENEFITS CARD */
 .benefits{
@@ -1044,20 +1063,23 @@ input[type=submit]:hover {
   .contact{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     padding-bottom: 2.5rem;
   }
   iframe{
-    width: 100%;
+    width: 90%;
     height: 60vh;
     padding: 0 0 20px 0;
   }
   .contact-form{
     display: flex;
     flex-direction: column;
-    padding: 0;
+    justify-content: center;
+    padding: 20px 30px;
   }
   .contact h3{
+    font-size: 2rem;
     width: 80%;
   }
 }
